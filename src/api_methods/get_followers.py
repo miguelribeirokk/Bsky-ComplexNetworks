@@ -13,7 +13,7 @@ client = Client()
 client.login(username, password)
 
 # Identificador do usuário (actor)
-actor = "did:plc:u2o5onxie3yg3t25oufxlhsz"  # Atlético
+actor = "did:plc:sc2mo2yyi7cdxbfhp275jgzl"  # Atlético
 
 # Inicialize os parâmetros com o limite de 100 (máximo permitido pela API)
 params = Params(actor=actor, limit=100)

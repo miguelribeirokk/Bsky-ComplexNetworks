@@ -1,9 +1,10 @@
 from atproto import Client
 import os
 from dotenv import load_dotenv
-from pprint import pprint
+import pandas as pd
 
 load_dotenv()
+
 
 def main():
     # Obter as credenciais do arquivo .env
@@ -15,7 +16,7 @@ def main():
     client.login(username, password)
 
     # Handle do usuário cujo perfil você deseja buscar
-    user_handle = 'atletico.bsky.social'
+    user_handle = 'vasco.com.br'
     profile = client.get_profile(user_handle)
 
     # Exibe as informações do perfil
@@ -29,6 +30,7 @@ def main():
     print(f"Avatar URL: {profile.avatar or 'N/A'}")
     print(f"Banner URL: {profile.banner or 'N/A'}")
     print(f"DID: {profile.did or 'N/A'}")
+
 
 if __name__ == '__main__':
     main()
