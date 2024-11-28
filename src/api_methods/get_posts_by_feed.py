@@ -5,6 +5,7 @@ from pprint import pprint
 
 load_dotenv()
 
+
 def main():
     # Obter as credenciais do arquivo .env
     username = os.getenv('BSKY_USERNAME')
@@ -30,7 +31,7 @@ def main():
     pprint(feed, depth=3)
 
     for post in feed:
-        print("_"*150)
+        print("_" * 150)
         print("Post number:", feed.index(post) + 1)
         # Navegando diretamente pelos campos
         author = post['post']['author']
@@ -64,6 +65,7 @@ def main():
         print("Quote Count:", post['post']['quote_count'])
         print("Reply Count:", post['post']['reply_count'])
         print("Repost Count:", post['post']['repost_count'])
+
 
 if __name__ == '__main__':
     main()

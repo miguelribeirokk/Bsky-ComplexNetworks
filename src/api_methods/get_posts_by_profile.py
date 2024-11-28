@@ -1,10 +1,10 @@
 from atproto import Client
 import os
 from dotenv import load_dotenv
-from pprint import pprint
 import time  # Para adicionar delays entre chamadas, se necessário
 
 load_dotenv()
+
 
 def fetch_posts(client, actor_did, filter_type, page_limit=10, max_pages=5):
     cursor = None  # Cursor inicial vazio
@@ -89,6 +89,7 @@ def main():
         page_limit=100,  # Número de posts por página
         max_pages=30  # Número máximo de páginas a buscar
     )
+
 
 if __name__ == '__main__':
     main()
