@@ -1,7 +1,7 @@
 class Account:
     def __init__(self, id, name):
         self.id = id
-        self.name = name
+        self.nome = name
         self.followers = {}
 
     def add_follower(self, id, name):

@@ -1,3 +1,5 @@
 python-dotenv~=1.0.1
 pandas~=2.2.3
 atproto~=0.0.55
+pymongo~=4.10.1
+jedi~=0.19.1

@@ -15,7 +15,7 @@ def main():
     client.login(username, password)
 
     # Handle do usuário cujo perfil você deseja buscar
-    user_handle = 'did:plc:b3evpii5zq5lrpt7xn7pki7f'
+    user_handle = 'litona.bsky.social'
     profile = client.get_profile(user_handle)
 
     # Exibe as informações do perfil
