@@ -1,7 +1,6 @@
 from time import sleep
 
 from atproto_client.models.app.bsky.graph.get_followers import Params
-from jedi.debug import reset_time
 
 from model.client import AtProtoClientContextManager
 
@@ -14,26 +13,20 @@ def get_followers(actor_did: str, client, max_followers: int):
     while curr_num_followers < max_followers or max_followers == 0:
         response = client.app.bsky.graph.get_followers(params=params)
 
-
         if not response.followers:
             print("Nenhum seguidor retornado. Encerrando.")
             break
 
         all_followers.extend(response.followers)
-        #print(f"Followers retrieved: {len(response.followers)}")
         curr_num_followers += len(response.followers)
 
         if response.cursor:
             params.cursor = response.cursor
         else:
-            #print("Cursor ausente. Todos os seguidores foram recuperados.")
             break
 
-        sleep(0.15)  # Evitar sobrecarregar a API
+        sleep(0.15)
 
-
-
-    #print(f"Total followers retrieved: {len(all_followers)}")
     return all_followers
 
 
