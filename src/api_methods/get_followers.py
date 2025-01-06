@@ -24,7 +24,7 @@ def get_followers(actor_did: str, client, max_followers: int):
             params.cursor = response.cursor
         else:
             break
-
+        print(f"Obtidos {curr_num_followers} seguidores. Aguardando 0.15s para próxima requisição.")
         sleep(0.15)
 
     return all_followers
